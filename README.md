@@ -116,7 +116,6 @@ Hãy nói rằng bạn đã xóa 1 branch remote và sau đó clone repository.
 Với ```fsck``` bạn có thể tìm kiếm và khôi phục các nhánh remote bị xóa.
 
 # 10. Cherry Pick
-56/5000
 Cuối cùng tôi đã lưu các lệnh Git thanh lịch nhất. 
 Lệnh cherry-pick là lệnh Git yêu thích của tôi, bởi vì nghĩa đen cũng như tiện ích của nó!
 Theo cách đơn giản nhất, cherry-pickchọn một commit duy nhất từ một nhánh khác và kết hợp nó với cái hiện tại của bạn.
