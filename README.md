@@ -1,4 +1,4 @@
-# Gist-guide
+
 # 1. Git Auto Completion
 Nếu chạy nhiều câu lệnh Git qua dòng lệnh, Thật là một công việc tẻ nhạt mỗi lần gõ các lệnh bằng tay.
 Để giúp đỡ việc này, bạn có thể tự động hoàn thành lệnh Git trong vòng vài phút.
