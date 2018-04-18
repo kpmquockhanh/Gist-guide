@@ -1,13 +1,13 @@
 
 # 1. Git Auto Completion
 Nếu chạy nhiều câu lệnh Git qua dòng lệnh, Thật là một công việc tẻ nhạt mỗi lần gõ các lệnh bằng tay.
-Để giúp đỡ việc này, bạn có thể tự động hoàn thành lệnh Git trong vòng vài phút.
+Để giúp đỡ việc này, bạn có thể kích hoạt tính năng tự động điền lệnh Git trong vòng vài phút.
 Để có được bản script này, hãy chạy lệnh sau trong hệ thống Unix:
 
 cd ~
 curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
-Next, add the following lines to your ```~/.bash_profile``` file:
+Next, add the following lines to your ```~/.bash_profile``` file **Tiếp theo, thêm các dòng sau vào tập tin ```~/.bash_profile```**:
 
     if [ -f ~/.git-completion.bash ]; then
       . ~/.git-completion.bash
@@ -49,14 +49,14 @@ Hãy nói rằng bạn đã commit cái gì đó mà bạn không muốn và k�
 Gần đây, bạn nhận ra bạn đã sót vài thông tin khác trong tiến trình và muốn lấy nó lại, hay ít nhất là xem nó. 
 Đây là lúc ```git reflog``` có thể giúp bạn.
 Một ```git log``` đơn giản cho bạn biết commit mới nhất, cha của nó, cha của cha nó, và hơn nữa. 
-Tuy nhiên, ```git reflog``` là một danh sách các commit chỉ được trỏ vào phần tử đầu.
+Tuy nhiên, ```git reflog``` là một danh sách các commit ~~chỉ được trỏ vào phần tử đầu~~ **mà head đã từng trỏ tới**.
 Nhớ rằng nó là một hệ thống local của bạn;nó không phải là một phần repository  của bạn và không bao gồm các pushes hoặc merges.
 Nếu tôi chạy ```git log```, Tôi nhận được những commit cái mà là một phần của repository của tôi:
 Tuy nhiên, Một ```git reflog``` hiển thị 1 commit bị mất khi bạn thực hiện 1 hard reset:
 # 6. Phân laoij các phần của file đã thay đổi cho một Commit
 Nói chung là tạo các commit dựa trên chức năng, đó là mỗi commit phải đại diện cho một chức năng hoặc một bug fix. 
 Hãy xem xét điều gì sẽ xảy ra nếu bạn sửa hai lỗi hoặc thêm nhiều tính năng mà không thực hiện commit nào.
-Trong trường hợp tình huống như vậy, bạn có thể đặt những thay đổi trong một cam kết duy nhất.
+Trong trường hợp tình huống như vậy, bạn có thể đặt những thay đổi trong một ~~cam kết~~ **commit** duy nhất.
 Nhưng có một cách tốt hơn: Phân loại các tập tin riêng lẻ và commit chúng một cách riêng biệt.
 Giả sử bạn đã thực hiện nhiều thay đổi cho một tệp và muốn chúng xuất hiện trong các commit riêng biệt.
 Trong trường hợp này, chúng ta thêm file với tiền tố `-p` để thêm các câu lệnh.
