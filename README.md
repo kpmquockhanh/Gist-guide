@@ -1,4 +1,4 @@
-
+(Thiếu phần mở đầu)
 # 1. Git Auto Completion
 Nếu chạy nhiều câu lệnh Git qua dòng lệnh, Thật là một công việc tẻ nhạt mỗi lần gõ các lệnh bằng tay.
 Để giúp đỡ việc này, bạn có thể tự động hoàn thành lệnh Git trong vòng vài phút.
@@ -7,7 +7,7 @@ Nếu chạy nhiều câu lệnh Git qua dòng lệnh, Thật là một cô
 cd ~
 curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
-Next, add the following lines to your ```~/.bash_profile``` file:
+Tiếp theo, thêm vào file ```~/.bash_profile``` các dòng lệnh sau:
 
     if [ -f ~/.git-completion.bash ]; then
       . ~/.git-completion.bash
@@ -36,7 +36,7 @@ commit thực hiện thay đổi cuối cùng của dòng đó, và mốc thời
 # 4. Xem lại lịch sử của Repository
 Chúng tôi đã xem xét việc sử dụng ```git log``` trong một hướng dẫn trước đó, tuy nhiên, có ba lựa chọn mà bạn cần biết.
         
-        ```--oneline``` – Nén thống tin hiện thỉ bên cạnh mỗi commit thành các commit hash giảm thiểu và các thông điệp commit, 
+        ```--oneline``` – Nén thống tin hiển thị bên cạnh mỗi commit thành các commit hash giảm thiểu và các thông điệp commit, 
         tất cả được hiển thị trong 1 dòng đơn
         ```--graph``` – Lựa chọn này vẽ 1 miêu tả đồ thị dựa trên văn bản về lịch sử trên phía tay trái của đầu ra. 
         Nó sẽ vỗ nghĩa nếu bạn đang xem lịch sử cho 1 nhánh đơn
@@ -50,13 +50,13 @@ Gần đây, bạn nhận ra bạn đã sót vài thông tin khác trong tiến 
 Đây là lúc ```git reflog``` có thể giúp bạn.
 Một ```git log``` đơn giản cho bạn biết commit mới nhất, cha của nó, cha của cha nó, và hơn nữa. 
 Tuy nhiên, ```git reflog``` là một danh sách các commit chỉ được trỏ vào phần tử đầu.
-Nhớ rằng nó là một hệ thống local của bạn;nó không phải là một phần repository  của bạn và không bao gồm các pushes hoặc merges.
+Nhớ rằng nó chỉ tồn tại trên hệ thống của bạn;nó không phải là một phần repository  của bạn và không bao gồm các pushes hoặc merges.
 Nếu tôi chạy ```git log```, Tôi nhận được những commit cái mà là một phần của repository của tôi:
 Tuy nhiên, Một ```git reflog``` hiển thị 1 commit bị mất khi bạn thực hiện 1 hard reset:
-# 6. Phân laoij các phần của file đã thay đổi cho một Commit
-Nói chung là tạo các commit dựa trên chức năng, đó là mỗi commit phải đại diện cho một chức năng hoặc một bug fix. 
-Hãy xem xét điều gì sẽ xảy ra nếu bạn sửa hai lỗi hoặc thêm nhiều tính năng mà không thực hiện commit nào.
-Trong trường hợp tình huống như vậy, bạn có thể đặt những thay đổi trong một cam kết duy nhất.
+# 6. Phân loại các phần của file đã thay đổi cho một Commit
+Nói chung đây là một ví dụ tốt để thực hiện tạo các commit dựa trên chức năng, đó là mỗi commit phải đại diện cho một chức năng hoặc một sửa lỗi. 
+Hãy xem xét điều gì sẽ xảy ra nếu bạn sửa hai lỗi hoặc thêm nhiều tính năng mà không commit những thay đổi đó.
+Trong trường hợp tình huống như vậy, bạn có thể đặt những thay đổi trong một commit duy nhất.
 Nhưng có một cách tốt hơn: Phân loại các tập tin riêng lẻ và commit chúng một cách riêng biệt.
 Giả sử bạn đã thực hiện nhiều thay đổi cho một tệp và muốn chúng xuất hiện trong các commit riêng biệt.
 Trong trường hợp này, chúng ta thêm file với tiền tố `-p` để thêm các câu lệnh.
@@ -76,14 +76,14 @@ Trong trường hợp của chúng tôi,
 chúng tôi chắc chắn muốn chia nhỏ nó thành các phần nhỏ hơn để bổ sung có chọn lọc và bỏ qua phần còn lại.
 Như bạn thấy, chúng tôi đã thêm vào dòng đầu tiên và thứ ba và bỏ qua thứ hai.
 Sau đó bạn có thể xem tình trạng của repo và thực hiện một commit.
-# 7. Nén nhiều commit
+# 7. Tập hợp nhiều commit
 Khi bạn gửi code của mình để xem xét và tạo một pull request (thường xảy ra trong các dự án mã nguồn mở),
 bạn có thể được yêu cầu thay đổi cho mã của bạn trước khi nó được chấp nhận.
 Bạn tạo sự thay đổi, chỉ khi được yêu cầu thay đổi nó 1 lần nữa trong lần xem lại tiếp theo. 
 Trước khi bạn biết nó, bạn có vài commit thêm. 
-Lý tưởng nhất là bạn có thể ép chúng lại làm 1 sử dụng câu lệnh ```rebase```.
+Lý tưởng nhất là bạn có thể tập hợp chúng lại làm 1 sử dụng câu lệnh ```rebase```.
         git rebase -i HEAD~[number_of_commits]
-Nếu bạn muốn nén 2 commit cuối, câu lệnh bạn chạy như dưới đây.
+Nếu bạn muốn tập hợp 2 commit cuối, câu lệnh bạn chạy như dưới đây.
         git rebase -i HEAD~2
 Khi chạy lệnh này, bạn sẽ được đưa đến một giao diện tương tác liệt kê các cam kết và hỏi bạn những cái cần nén.
 Tốt nhất là bạn chọn những commit mới nhất và sử dụng những cái cũ.
@@ -118,12 +118,12 @@ Với ```fsck``` bạn có thể tìm kiếm và khôi phục các nhánh remote
 # 10. Cherry Pick
 Cuối cùng tôi đã lưu các lệnh Git thanh lịch nhất. 
 Lệnh cherry-pick là lệnh Git yêu thích của tôi, bởi vì nghĩa đen cũng như tiện ích của nó!
-Theo cách đơn giản nhất, cherry-pickchọn một commit duy nhất từ một nhánh khác và kết hợp nó với cái hiện tại của bạn.
+Theo cách đơn giản nhất, cherry-pick chọn một commit duy nhất từ một nhánh khác và kết hợp nó với cái hiện tại của bạn.
 Nếu bạn đang làm việc theo kiểu song song trên hai hoặc nhiều nhánh, 
 bạn có thể nhận thấy một lỗi xảy ra ở tất cả các nhánh.
 Nếu bạn giải quyết nó trong một, bạn có thể cherry-pick commit vào các nhánh khác,
 mà không phiền với các tập tin hoặc các commit khác.
-Tôi có 2 nhánh và tôi muốn ```cherry-pick``` commi ts```b20fd14: Cleaned junk``` đến 1 nhánh khác.
+Tôi có 2 nhánh và tôi muốn ```cherry-pick``` commits```b20fd14: Cleaned junk``` đến 1 nhánh khác.
 Tôi chuyển tới nhánh tới nhánh tôi muốn ```cherry-pick``` commit, và chạy lệnh sau:
         git cherry-pick [commit_hash]
 Mặc dù lần này tôi đã dọn ```cherry-pick```, bạn nên biết rằng cây lệnh này thường dẫn tới các xung đột, 
